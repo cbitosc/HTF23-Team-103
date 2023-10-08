@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notifications</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link to the CSS file -->
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: #0077cc;
+    font-weight: bold;
+}
+
+/* Style for Notifications Page */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #0077cc;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style for Dropdown Menu */
+select:focus {
+    outline: none;
+    border-color: #0077cc;
+    box-shadow: 0 0 5px rgba(0, 119, 204, 0.5);
+}
+    </style>
+</head>
+<body>
+    <h1>Notifications</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+         
+            <th>Category</th>
+            <th>Action</th>
+            
+        </tr>
+        <tr>
+            <td>Certificate 1</td>
+            
+            <td>
+                <select>
+                    <option value="Category">Category </option> 
+                    <option value="Category 1">Technical Events(Participant-5)</option>
+                    <option value="Category 1">Technical Events(Organizer-10)</option>
+                    <option value="Category 2">Internship(20)</option>
+                    <option value="Category 3">nptel courses(20)</option>
+                    <option value="Category 4">cultural activities(10)</option>
+                    <option value="Category 5">social service(5)</option>
+                </select>
+            </td>
+           
+            <td>
+                <button onclick="acceptCertificate('Certificate 1')">Accept</button>
+                <button onclick="rejectCertificate('Certificate 1')">Reject</button>
+            </td>
+           
+        </tr>
+        <tr>
+            <td>Certificate 2</td>
+            
+            <td>
+                <select>
+                    <option value="Category">Category </option> 
+                    <option value="Category 1">Technical Events(Participant-5)</option>
+                    <option value="Category 1">Technical Events(Organizer-10)</option>
+                    <option value="Category 2">Internship(20)</option>
+                    <option value="Category 3">nptel courses(20)</option>
+                    <option value="Category 4">cultural activities(10)</option>
+                    <option value="Category 5">social service(5)</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="acceptCertificate('Certificate 2')">Accept</button>
+                <button onclick="rejectCertificate('Certificate 2')">Reject</button>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>Certificate 3</td>
+            
+            <td>
+                <select>
+                    <option value="Category">Category </option> 
+                    <option value="Category 1">Technical Events(Participant-5)</option>
+                    <option value="Category 1">Technical Events(Organizer-10)</option>
+                    <option value="Category 2">Internship(20)</option>
+                    <option value="Category 3">nptel courses(20)</option>
+                    <option value="Category 4">cultural activities(10)</option>
+                    <option value="Category 5">social service(5)</option>
+                </select>
+            </td>
+           
+            <td>
+                <button onclick="acceptCertificate('Certificate 1')">Accept</button>
+                <button onclick="rejectCertificate('Certificate 1')">Reject</button>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>Certificate 4</td>
+            
+            <td>
+                <select>
+                    <option value="Category">Category </option> 
+                    <option value="Category 1">Technical Events(Participant-5)</option>
+                    <option value="Category 1">Technical Events(Organizer-10)</option>
+                    <option value="Category 2">Internship(20)</option>
+                    <option value="Category 3">nptel courses(20)</option>
+                    <option value="Category 4">cultural activities(10)</option>
+                    <option value="Category 5">social service(5)</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="acceptCertificate('Certificate 2')">Accept</button>
+                <button onclick="rejectCertificate('Certificate 2')">Reject</button>
+            </td>
+           
+        </tr>
+        <tr>
+            <td>Certificate 5</td>
+            
+            <td>
+                <select>
+                    <option value="Category">Category </option> 
+                    <option value="Category 1">Technical Events(Participant-5)</option>
+                    <option value="Category 1">Technical Events(Organizer-10)</option>
+                    <option value="Category 2">Internship(20)</option>
+                    <option value="Category 3">nptel courses(20)</option>
+                    <option value="Category 4">cultural activities(10)</option>
+                    <option value="Category 5">social service(5)</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="acceptCertificate('Certificate 2')">Accept</button>
+                <button onclick="rejectCertificate('Certificate 2')">Reject</button>
+            </td>
+            
+        </tr>
+        <!-- Add more certificate rows here -->
+    </table>
+
+    <script>
+        function acceptCertificate(certificateName) {
+            // Add logic to mark the certificate as accepted
+            alert('Accepted ' + certificateName);
+        }
+
+        function rejectCertificate(certificateName) {
+            // Add logic to mark the certificate as rejected
+            alert('Rejected ' + certificateName);
+        }
+    </script>
+</body>
+</html>
