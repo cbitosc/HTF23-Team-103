@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Activity Points</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(
+          180deg,
+          rgb(55, 55, 203),
+          rgb(107, 42, 199)
+        );
+        height: 100vh;
+        overflow: hidden;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: aliceblue;
+        width: 400px;
+        border-radius: 10px;
+        padding: 0 40px;
+        box-sizing: border-box;
+      }
+      button{
+        width: 100%;
+        height: 50px;
+        border: 1px solid rgb(19, 99, 218);
+        background: rgb(26, 62, 154);
+        border-radius: 25px;
+        font-size: 18px;
+        color: #e9f4fb;
+        font-weight: 700;
+        cursor: pointer;
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>WELCOME TO ACTIVITY POINTS TRACKER</h1>
+    <div class="container">
+      <h3><center>Are You A</center></h3>
+      <a href="/LoginStudent"><button>Student</button></a>
+      <a href="/LoginMentor"><button>Mentor</button></a>
+    </div>
+  </body>
+</html>

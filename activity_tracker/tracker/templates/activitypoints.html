@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        nav{
+            overflow: hidden;
+            background-color: #404040;
+            box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+            padding: 10px;
+        }
+        .listitems{
+            margin-left: 40px;
+            margin-right: 50px;
+        }
+        nav a{
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            font-size: 17px;
+            text-decoration: none;
+        }
+        nav a:hover{
+            color: rgb(255, 255, 255);
+            border: 1px solid white;
+        }
+        nav a:active{
+            color: rgb(255, 255, 255);
+            border: 1px solid white;
+        }
+        nav .nav-right{
+            float: right;
+        }
+        main{
+            padding: 16px;
+            width: auto;
+            margin-left: 80px;
+            margin-right: 100px;
+        }
+        section{
+            margin-top: 100px;
+            max-height: fit-content;
+            justify-content: center;
+        }
+        section p{
+            font-size: 18px;
+        }
+        .info{
+            display: flex;
+        }
+        .add{
+            position: relative;
+            top: 17px;
+            padding-left: 88%;
+        }
+        .tpoints{
+            font-size: 40px;
+            font-weight: 600;
+            color: #272323;
+            padding-left: 15px;
+
+        }
+        button{
+            border: none;
+            width: 30px;
+            height: 30px;
+            background: rgb(133, 137, 146);
+            border-radius: 15px;
+            font-size: 20px;
+            color: #e9f4fb;
+            font-weight: 600;
+            cursor: pointer;
+            outline: none;
+        }
+        table{
+            width: 100%;
+        }
+        thead,td{
+            text-align: left;
+            height: 20px;
+        }
+
+        thead{ 
+            background-color: rgb(83, 66, 231);
+        }
+        .formbox{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            background-color: transparent;
+            width: 400px;
+            border-radius: 10px; 
+            backdrop-filter: blur(80px);
+            border: 2px solid black;
+            display: none;
+            background-color: #404040;
+        }
+
+        .formbox h1{
+            text-align: center;
+            padding: 0 0 20px 0;
+            color: black;
+            font-family: cursive;
+            border-bottom: 1px solid #adadad;
+            cursor: default;
+        }
+        .formbox form{
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+
+        form .txt{
+            position: relative;
+            border-bottom: 2px solid #adadad;
+            margin: 30px 0;
+        }
+
+        .txt input{
+            width:100%;
+            padding: 0 5px 0 15px;
+            height:40px;
+            color: #e9f4fb;
+            font-size: 16px;
+            border: none;
+            background-color: transparent;
+            outline: none;
+        }
+
+        .txt label{
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            color: #adadad;
+            transform: translateY(-50%);
+            font-size: 16px;
+            pointer-events: none;
+            transition: .3s;
+        }
+
+        .txt span::before{
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: black;
+            transition: .5s;
+        }
+        .txt input:focus ~ label,
+        .txt input:valid ~ label{
+            top: -5px;
+            color: gray;
+        }
+        .txt input:focus ~ span::before,
+        .txt input:valid ~ span::before{
+            width: 100%;
+        }
+
+        /* input[type=file]:required:invalid::-webkit-datetime-edit {
+            color: transparent;
+        }
+        input[type=file]:focus::-webkit-datetime-edit {
+            color: gray !important;
+        } */
+
+        /* input[type="file"]{
+            color: #adadad;
+            position: relative;
+            top: 15px;
+            color: transparent;
+        } */
+
+        input[type="submit"]{
+            width: 100%;
+            height: 50px;
+            border: 2px solid rgb(0, 0, 0);
+            background: transparent;
+            border-radius: 25px;
+            font-size: 18px;
+            color: Grey;
+            font-weight: 700;
+            cursor: pointer;
+            outline: none;
+            margin-bottom: 15px;
+        }
+        input[type="submit"]:hover{
+            border-color: black;
+            color: black;
+            transition: .5s;
+        }
+
+        input[type="file"]{
+            display: none;
+        }
+
+        .file label{
+            cursor: pointer;
+        }
+
+        .file{
+            color:#adadad;
+            padding-left: 15px;
+            padding: 3%;
+            border: 1px solid #adadad;
+        }
+
+        #fileName{
+            color: black;
+        }
+
+        .file i{
+            padding-left: 50px;
+        }
+
+    </style>
+    <title>Document</title>
+    <script>
+        function openform() {
+            document.getElementById("myForm").style.display = "block";
+        }
+    </script>
+    <script>
+        function add() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+    <!-- <script>
+        function add(){
+        var table = document.getElementById("Table");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        cell1.innerHTML = document.getElementById("").value;
+        cell2.innerHTML = document.getElementById("").value;
+        cell3.innerHTML = document.getElementById("").value;
+        cell4.innerHTML = document.getElementById("").value;
+        }
+        </script> -->
+</head>
+<body>
+    <nav class="nav" id="mynav">
+        <div class="listitems">
+            <a href="#home">Home</a>
+            <a href="#points">Activity Points</a>
+            <div class="nav-right">
+                <a href="#logout"><i class="fi fi-rr-user"></i>&nbsp;&nbsp;Logout</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div>
+            <section>
+                <h1>Hello Sanjana,</h1>
+                <div class="info">
+                    <div>
+                        <p>Your Point are, <span class="tpoints">15</span></p>
+                    </div>
+                    <div class="add">
+                        <button onclick="openform()">+</button>
+                    </div>
+                </div>
+            </section>
+            <div class="list">
+                <h2>List of Your Certificates</h2><hr/>
+                <table id="Table">
+                    <col style="width:55%">
+                    <col style="width:15%">
+                    <col style="width:15%">
+                    <col style="width:15%">
+                    <thead>
+                        <td class="crtf">Certificate</th>
+                        <td class="status">Status</td>
+                        <td class="points">Points</td>
+                        <td class="Cat">Category</td>
+                    </thead>
+                    <tr>
+                        <td>Headstart</td>
+                        <td>Approved</td>
+                        <td>5</td>
+                        <td>Particition</td>
+                    </tr>
+                    <tr>
+                        <td>Hunt-it-out</td>
+                        <td>Pending</td>
+                        <td>-</td>
+                        <td>Particition</td>
+                    </tr>
+                    <tr>
+                        <td>Debate</td>
+                        <td>Approved</td>
+                        <td>10</td>
+                        <td>Particition</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="formbox" id="myForm">
+                <form action="">
+                    <h1>Submit Your Certificate</h1>
+                    <div class="txt">
+                        <input type="text" id="name" required>
+                        <span></span>
+                        <label>Name</label>
+                    </div>
+                    <div class="txt">
+                        <input type="text" id="batch" required>
+                        <span></span>
+                        <label>Batch</label>
+                    </div>
+                    <div class="txt">
+                        <input type="text" id="category" required>
+                        <span></span>
+                        <label>Category</label>
+                    </div>
+                    <div class="file">
+                        <label>Upload Certificate <br/>
+                            <i class="fi fi-rr-folder"></i>
+                            <input type="file" name="file" id="Certificate">
+                            <br/>
+                            <span id="fileName"></span>
+                        </label>
+                    </div>
+                    <script>
+                        let input = document.getElementById("Certificate");
+                        let fileName = document.getElementById("fileName")
+                
+                        input.addEventListener("change", ()=>{
+                            let inputfile = document.querySelector("input[type=file]").files[0];
+                            fileName.innerText = inputfile.name;
+                        })
+                    </script>
+                    <br>
+                        <input type="submit" value="Add" onclick="add()">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

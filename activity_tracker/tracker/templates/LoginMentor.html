@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login page</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="icon"
+      href="D:\My Projects\Web pages\ocean-3605547__340.jpg"
+      sizes="50x50"
+    />
+    <script
+      src="https://kit.fontawesome.com/2b00c195ba.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(
+          180deg,
+          rgb(55, 55, 203),
+          rgb(107, 42, 199)
+        );
+        height: 100vh;
+        overflow: hidden;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+      nav {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: transparent;
+      }
+      li {
+        float: left;
+      }
+      li a {
+        display: flex;
+        border-radius: 20px;
+        color: black;
+        text-align: center;
+        padding: 15px;
+        text-decoration: none;
+      }
+      li a:hover {
+        background-color: beige;
+      }
+      i {
+        margin: 0;
+        padding: 1px 3px;
+      }
+      .box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: aliceblue;
+        width: 400px;
+        border-radius: 10px;
+      }
+      .box h1 {
+        text-align: center;
+        padding: 0 0 20px 0;
+        border-bottom: 1px solid #adadad;
+      }
+      .box form {
+        padding: 0 40px;
+        box-sizing: border-box;
+      }
+      form .txt {
+        position: relative;
+        border-bottom: 2px solid #adadad;
+        margin: 30px 0;
+      }
+
+      .txt input {
+        width: 85%;
+        padding: 0 5px 0 45px;
+        height: 40px;
+        font-size: 16px;
+        border: none;
+        background: none;
+        outline: none;
+        backdrop-filter: blur(5px);
+      }
+      .txt i {
+        position: absolute;
+        top: 11px;
+        left: 10px;
+        color: #adadad;
+      }
+      .txt label {
+        position: absolute;
+        top: 50%;
+        left: 45px;
+        color: #adadad;
+        transform: translateY(-50%);
+        font-size: 16px;
+        pointer-events: none;
+        transition: 0.3s;
+      }
+      .txt span::before {
+        content: "";
+        position: absolute;
+        top: 40px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: black;
+        transition: 0.5s;
+      }
+      .txt input:focus ~ label,
+      .txt input:valid ~ label {
+        top: -5px;
+        color: black;
+      }
+      .txt input:focus ~ span::before,
+      .txt input:valid ~ span::before {
+        width: 100%;
+      }
+      .pass {
+        margin: -5px 0 20px 5px;
+        color: #a6a6a6;
+        cursor: pointer;
+      }
+      .pass:hover {
+        text-decoration: underline;
+      }
+
+      button {
+        width: 100%;
+        height: 50px;
+        border: 1px solid rgb(19, 99, 218);
+        background: rgb(26, 62, 154);
+        border-radius: 25px;
+        font-size: 18px;
+        color: #e9f4fb;
+        font-weight: 700;
+        cursor: pointer;
+        outline: none;
+      }
+      button:hover {
+        border-color: rgb(33, 15, 236);
+        transition: 0.5s;
+        box-shadow: 1px 7px 7px 1px rgba(0, 0, 0, 0.3);
+      }
+      .signup_link {
+        margin: 30px 0;
+        text-align: center;
+        font-size: 16px;
+        color: #a6a6a6;
+      }
+      .signup_link a {
+        color: #2691d9;
+        text-decoration: none;
+      }
+      .signup_link a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <form>
+        <h1>Login</h1>
+        <div class="txt">
+          <input type="text" required />
+          <span></span>
+          <label>Mentor ID</label>
+          <i class="fi fi-rr-user"></i>
+        </div>
+        <div class="txt">
+          <input type="password" required />
+          <span></span>
+          <label>Password</label>
+          <i class="fi fi-rr-lock"></i>
+        </div>
+        <div class="pass">Forgot Password?</div>
+        <button><a href="/HomeMentor">Login</a></button>
+        <div class="signup_link">
+          New Mentor? <a href="" target="_blank">Signup</a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
